@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    environment:
+      - POSTGRES_DB=ITIC_DB
+      - POSTGRES_PASSWORD=ITIC
+      - POSTGRES_USER=ITIC_user
+    ports:
+      - "2345:5432"
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: roger.sobrino@xtec.cat
+      PGADMIN_DEFAULT_PASSWORD: roger123
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+volumes:
+  local_pgdata:
+  pgadmin-data:

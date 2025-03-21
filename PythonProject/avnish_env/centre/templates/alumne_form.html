@@ -1,0 +1,10 @@
+{% extends "index_centre.html" %}
+
+{% block content %}
+    <h2>Formulari d'Alumne</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ alumne_form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/header.css' %}">
+
+<nav class="navbar">
+    <h1>Institut MediaTIC</h1>
+    <ul>
+        <a href="{% url 'alumne' %}">Alumnes</a></li>
+        <a href="{% url 'professor' %}">Professors</a></li>
+        <a href="{% url 'professor_form' %}">Afegir Professor</a>
+        <a href="{% url 'alumne_form' %}">Afegir Alumne</a>
+
+
+    </ul>
+</nav>

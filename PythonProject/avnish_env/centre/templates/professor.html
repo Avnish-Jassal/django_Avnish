@@ -1,0 +1,38 @@
+{% extends "index_centre.html" %}
+{% block content %}
+<h1>Dades Professor</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>Correu</th>
+            <th>Curs</th>
+            <th>Tutor</th>
+            <th>Mòduls que imparteix</th>
+            <th>Accions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proff in professors %}
+        <tr>
+            <td>{{ proff.id }}</td>
+            <td>{{ proff.nom }}</td>
+            <td>{{ proff.apellido1 }}</td>
+            <td>{{ proff.apellido2 }}</td>
+            <td>{{ proff.correu }}</td>
+            <td>{{ proff.curs }}</td>
+            <td>{{ proff.tutor }}</td>
+            <td>{{ proff.moduls }}</td>
+            <td>
+                <a href="{% url 'professor_detall' proff.id %}">Ver más</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
