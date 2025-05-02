@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inici</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Benvingut, {{ user.username }}!</h1>
+    <form action="{% url 'logout' %}" method="get">
+        <button type="submit">Tancar sessió</button>
+    </form>
+</div>
+</body>
+</html>
